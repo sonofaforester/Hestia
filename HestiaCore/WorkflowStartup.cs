@@ -1,4 +1,5 @@
-﻿using HestiaDatabase;
+﻿using HestiaCore.ActionProviders;
+using HestiaDatabase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -54,6 +55,7 @@ namespace HestiaCore
                      .WithPersistenceProvider(dbProvider)
                      .EnableCodeActions()
                      .SwitchAutoUpdateSchemeBeforeGetAvailableCommandsOn()
+                     .WithActionProvider(new ActionProvider())
                      .AsSingleServer();
 
             //events subscription

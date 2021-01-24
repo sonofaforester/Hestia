@@ -1,6 +1,7 @@
 ﻿using HestiaCore.Models;
 using HestiaDatabase;
 using HestiaDatabase.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace HestiaCore.Controllers
 {
+    [Authorize(JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
     public class TicketsController : HestiaControllerBase
